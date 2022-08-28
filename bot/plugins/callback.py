@@ -753,7 +753,7 @@ async def cb_types(bot, update: CallbackQuery):
     _types = _types["types"]
     vid = _types["video"]
     doc = _types["document"]
-    aud = _types["audio"]
+    lin = _types["link"]
     
     buttons = []
     
@@ -777,22 +777,22 @@ async def cb_types(bot, update: CallbackQuery):
         d_e="❎"
         dcb_data = f"toggle({chat_id}|document|True)"
 
-    if aud:
-        text+="\n<i><b>Audio Index:</b> Enabled</i>\n"
-        a_e = "✅"
-        acb_data = f"toggle({chat_id}|audio|False)"
+    if lin:
+        text+="\n<i><b>Link Index:</b> Enabled</i>\n"
+        l_e = "✅"
+        lcb_data = f"toggle({chat_id}|link|False)"
 
     else:
-        text+="\n<i><b>Audio Index:</b> Disabled</i>\n"
-        a_e="❎"
-        acb_data = f"toggle({chat_id}|audio|True)"
+        text+="\n<i><b>Link Index:</b> Disabled</i>\n"
+        l_e="❎"
+        lcb_data = f"toggle({chat_id}|link|True)"
 
     
     text+="\n<i>Below Buttons Will Toggle Respective Media Types As Enabled Or Disabled....\n</i>"
     text+="<i>This Will Take Into Action As Soon As You Change Them....</i>"
     
     buttons.append([InlineKeyboardButton(f"Video Index: {v_e}", callback_data=vcb_data)])
-    buttons.append([InlineKeyboardButton(f"Audio Index: {a_e}", callback_data=acb_data)])
+    buttons.append([InlineKeyboardButton(f"Link Index: {l_e}", callback_data=lcb_data)])
     buttons.append([InlineKeyboardButton(f"Document Index: {d_e}", callback_data=dcb_data)])
     
     buttons.append(
@@ -834,19 +834,19 @@ async def cb_toggle(bot, update: CallbackQuery):
     _types = _types["types"]
     vid = _types["video"]
     doc = _types["document"]
-    aud = _types["audio"]
+    lin = _types["link"]
     
     if types == "video":
         vid = True if val=="True" else False
     elif types == "audio":
-        aud = True if val=="True" else False
+        lin = True if val=="True" else False
     elif types == "document":
         doc = True if val=="True" else False
     
         
     settings = {
         "video": vid,
-        "audio": aud,
+        "link": lin,
         "document": doc
     }
 
@@ -867,7 +867,7 @@ async def cb_toggle(bot, update: CallbackQuery):
     _types = _types["types"]
     vid = _types["video"]
     doc = _types["document"]
-    aud = _types["audio"]
+    lin = _types["link"]
     
     buttons = []
     
@@ -891,22 +891,22 @@ async def cb_toggle(bot, update: CallbackQuery):
         d_e="❎"
         dcb_data = f"toggle({chat_id}|document|True)"
 
-    if aud:
-        text+="\n<i><b>Audio Index:</b> Enabled</i>\n"
-        a_e = "✅"
-        acb_data = f"toggle({chat_id}|audio|False)"
+    if lin:
+        text+="\n<i><b>Link Index:</b> Enabled</i>\n"
+        l_e = "✅"
+        lcb_data = f"toggle({chat_id}|link|False)"
 
     else:
-        text+="\n<i><b>Audio Index:</b> Disabled</i>\n"
-        a_e="❎"
-        acb_data = f"toggle({chat_id}|audio|True)"
+        text+="\n<i><b>Link Index:</b> Disabled</i>\n"
+        l_e="❎"
+        lcb_data = f"toggle({chat_id}|link|True)"
 
     
     text+="\n<i>Below Buttons Will Toggle Respective Media Types As Enabled Or Disabled....\n</i>"
     text+="<i>This Will Take Into Action As Soon As You Change Them....</i>"
     
     buttons.append([InlineKeyboardButton(f"Video Index : {v_e}", callback_data=vcb_data)])
-    buttons.append([InlineKeyboardButton(f"Audio Index : {a_e}", callback_data=acb_data)])
+    buttons.append([InlineKeyboardButton(f"Audio Index : {a_e}", callback_data=lcb_data)])
     buttons.append([InlineKeyboardButton(f"Document Index : {d_e}", callback_data=dcb_data)])
     
     buttons.append(
@@ -1642,7 +1642,7 @@ async def callback_data(bot, update: CallbackQuery):
             InlineKeyboardButton('My Dev 👨‍🔬', url='https://t.me/AlbertEinstein_TG'),
             InlineKeyboardButton('Source Code 🧾', url ='https://github.com/CrazyBotsz/Adv-Filter-Bot-V2')
         ],[
-            InlineKeyboardButton('Support 🛠', url='https://t.me/CrazyBotszGrp')
+            InlineKeyboardButton('Support 🛠', url='https://t.me/+oz9dIYN0tyI0NTU1')
         ],[
             InlineKeyboardButton('Help ⚙', callback_data="help")
         ]]
