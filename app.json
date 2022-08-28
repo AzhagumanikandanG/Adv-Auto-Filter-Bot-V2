@@ -1,14 +1,14 @@
 {
     "name": "Auto Filter Bot V2",
     "description": "A Filter Bot Which Doesnt Need Manuall Filter Adding",
-    "logo": "https://telegra.ph/file/667e15c821117633d07bd.png",
+    "logo": "https://drive.google.com/file/d/1Cyyv_KlbXnRSZ7ZqRk1cb3D7AGLdolY6/view?usp=drivesdk",
     "keywords": [
         "Auto",
         "Filter",
         "Mongo DB"
     ],
     "website": "https://github.com/CrazyBotsz",
-    "repository": "https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2",
+    "repository": "https://github.com/AzhagumanikandanG/Adv-Auto-Filter-Bot-V2",
     "success_url": "https://telegram.dog/CrazyBotsz",
     "env": {
         "APP_ID": {
