@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) @SpEcHIDe
+# (c) @Azhagucutebot
 
 from pyrogram import Client, enums, __version__
 
