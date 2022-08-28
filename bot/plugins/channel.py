@@ -93,7 +93,7 @@ async def connect(bot: Bot, update):
     
     try:
         mf = enums.MessagesFilter
-        type_list = [mf.VIDEO, mf.DOCUMENT, mf.AUDIO]
+        type_list = [mf.VIDEO, mf.DOCUMENT, mf.LINK]
         data = []
         skipCT = 0
         
@@ -120,12 +120,12 @@ async def connect(bot: Bot, update):
                         file_size = msgs.video.file_size
                         file_type = "video"
                     
-                    elif msgs.audio:
-                        file_id = file_id.audio.file_id
-                        file_name = msgs.audio.file_name[0:-4]
+                    elif msgs.link:
+                        file_id = file_id.link.file_id
+                        file_name = msgs.link.file_name[0:-4]
                         file_caption  = msgs.caption if msgs.caption else ""
-                        file_size = msgs.audio.file_size
-                        file_type = "audio"
+                        file_size = msgs.link.file_size
+                        file_type = "link"
                     
                     elif msgs.document:
                         file_id = file_id.document.file_id
@@ -293,12 +293,12 @@ async def new_files(bot: Bot, update):
             file_caption  = update.caption if update.caption else ""
             file_size = update.video.file_size
 
-        elif update.audio:
-            file_type = "audio"
-            file_id = update.audio.file_id
-            file_name = update.audio.file_name[0:-4]
+        elif update.link:
+            file_type = "link"
+            file_id = update.link.file_id
+            file_name = update.link.file_name[0:-4]
             file_caption  = update.caption if update.caption else ""
-            file_size = update.audio.file_size
+            file_size = update.link.file_size
 
         elif update.document:
             file_type = "document"
